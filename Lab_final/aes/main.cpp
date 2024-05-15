@@ -5,9 +5,17 @@ using namespace std;
 
 int main()
 {
+    ifstream fp;
+    fp.open("input.txt");
     string inpt, encr ;
-    cout << "Input : " ;
-    getline( cin, inpt );
+    string line;
+    while(getline(fp, line)){
+        inpt += line;
+        inpt += "\n";
+    }
+    inpt.pop_back();
+    // cout << "Input : " ;
+    // getline( cin, inpt );
     encr = cbc_encryption( inpt ) ;
     // encr = ecb_encryption( inpt ) ;
     // encr = ctr_encryption( inpt ) ;
