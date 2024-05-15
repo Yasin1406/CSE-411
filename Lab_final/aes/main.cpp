@@ -9,6 +9,8 @@ int main()
     cout << "Input : " ;
     getline( cin, inpt );
     encr = cbc_encryption( inpt ) ;
+    // encr = ecb_encryption( inpt ) ;
+    // encr = ctr_encryption( inpt ) ;
     write_file(encr);
     string decr;
      decr= getDecryptedText( encr ) ;
